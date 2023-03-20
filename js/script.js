@@ -16,10 +16,10 @@ const btnPlay = document.getElementById("startgame");
 btnPlay.addEventListener("click", function () {
   const grid = document.querySelector(".grid");
 
-  // reset previuos boxes
+  // Reset previuos boxes
   grid.innerHTML = "";
 
-  // quante celle devo generare
+  // Quante celle devo generare? (Bonus)
 
   for (let i = 1; i <= numberOfsquares; i++) {
     //   const currentNumber = numbers[i];
@@ -32,13 +32,13 @@ btnPlay.addEventListener("click", function () {
 
 // FUNZIONE PER CREARE IL TESTO
 function generateGridItem(number) {
-// CREO UN NODO
+  // CREO UN NODO
   const newSquare = document.createElement("div");
-// AGGIUNGO AL NODO LA CLASSE
+  // AGGIUNGO AL NODO LA CLASSE
   newSquare.classList.add("grid-item");
-//   creo elemento span con il numero
-newSquare.innerHTML = `<span>${number}</span>`;
-// al click aggiungiamo la classe azure
+  //   creo elemento span con il numero
+  newSquare.innerHTML = `<span>${number}</span>`;
+  // al click aggiungiamo la classe azure
   newSquare.addEventListener("click", function () {
     newSquare.classList.add("azure");
   });
@@ -47,6 +47,6 @@ newSquare.innerHTML = `<span>${number}</span>`;
 
 // FUNZIONE PER COLORARE IL TESTO DI AZZURRO
 function handleItemClick() {
-  //   const clickedNumber = parseInt(this.querySelector("span").textContent);
+  const clickedNumber = parseInt(this.querySelector("span").textContent);
   this.classList.add("azure");
 }
